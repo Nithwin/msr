@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MoveRight, Phone, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Magnetic from "@/components/ui/Magnetic";
 
 const navLinks = [
   { name: "Buy", href: "#machinery" },
@@ -49,18 +50,19 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-2 bg-white/5 rounded-full px-2 py-1 border border-white/5 backdrop-blur-md">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              className="relative px-5 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors rounded-full overflow-hidden group"
-            >
-              <span className="relative z-10">{link.name}</span>
-              <motion.div 
-                className="absolute inset-0 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                layoutId="nav-pill"
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            </Link>
+            <Magnetic key={link.name}>
+              <Link 
+                href={link.href}
+                className="relative px-5 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors rounded-full block group"
+              >
+                <span className="relative z-10">{link.name}</span>
+                <motion.div 
+                  className="absolute inset-0 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  layoutId="nav-pill"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              </Link>
+            </Magnetic>
           ))}
         </div>
 

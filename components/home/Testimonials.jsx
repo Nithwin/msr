@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
+import TextReveal from "@/components/ui/TextReveal";
 
 const testimonials = [
   {
@@ -32,7 +33,11 @@ export default function Testimonials() {
       
       <div className="max-w-7xl mx-auto relative z-10 px-4 md:px-0">
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Client Stories</h2>
+          <div className="flex justify-center mb-4">
+            <div className="h-[20vh] overflow-hidden flex items-center">
+              <TextReveal text="Client Stories" className="text-3xl md:text-5xl font-bold text-white h-auto" />
+            </div>
+          </div>
           <p className="text-white/60 text-base md:text-lg">Trusted by India's most discerning enthusiasts.</p>
         </div>
 

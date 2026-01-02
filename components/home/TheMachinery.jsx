@@ -33,10 +33,23 @@ const services = [
 
 export default function TheMachinery() {
   return (
-    <section id="machinery" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-navy)] mb-4">The Machinery</h2>
-        <p className="text-[var(--color-navy)]/60 text-lg">Comprehensive automotive expertise across all categories.</p>
+    <section id="machinery" className="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden">
+      {/* Grainy Gradient Background */}
+      <div className="absolute inset-0 -z-10 opacity-30">
+        <svg className="invisible w-0 h-0">
+          <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          </filter>
+        </svg>
+        <div className="absolute inset-0 bg-[#0a0a0a]" />
+        <div className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] opacity-20 animate-bg-spin bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]" />
+        <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 mix-blend-overlay"></div>
+      </div>
+
+      <div className="mb-16 relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">The Machinery</h2>
+        <p className="text-white/60 text-lg">Comprehensive automotive expertise across all categories.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

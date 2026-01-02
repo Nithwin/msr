@@ -8,6 +8,7 @@ const manrope = Manrope({
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 
 export const metadata = {
   title: "MSR Consulting | Precision Advice",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${manrope.variable} antialiased bg-white text-black selection:bg-[var(--color-navy)] selection:text-white`}
       >
+        <ScrollProgressBar />
         <Navbar />
         {children}
         <Footer />

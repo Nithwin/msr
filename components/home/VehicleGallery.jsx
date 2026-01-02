@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -50,45 +50,73 @@ export default function VehicleGallery() {
 
   return (
     <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black">
-      {vehicles.map((vehicle, index) => (
-        <motion.div
-           key={vehicle.id}
-           initial={{ opacity: 0 }}
-           animate={{ opacity: index === current ? 1 : 0 }}
-           transition={{ duration: 0.7 }}
-           className="absolute inset-0 w-full h-full"
-        >
-          {/* Image */}
-          <div className="relative w-full h-full">
-            <Image
-              src={vehicle.image}
-              alt={vehicle.title}
-              fill
-              className="object-cover object-center sm:object-center"
-              priority={index === 0}
-            />
-            {/* Gradient Overlay */}
-            <div className={cn("absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-80", vehicle.accent)} />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90" />
-          </div>
-          
-          {/* Content */}
-          <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 z-10 flex flex-col items-start justify-end h-full">
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: index === current ? 0 : 20, opacity: index === current ? 1 : 0 }}
-              transition={{ delay: 0.3 }}
+      {vehicles.map((vehicle, index) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const x = useMotionValue(0);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const y = useMotionValue(0);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const rotateX = useTransform(y, [-100, 100], [30, -30]);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const rotateY = useTransform(x, [-100, 100], [-30, 30]);
+
+        return (
+          <motion.div
+             key={vehicle.id}
+             initial={{ opacity: 0 }}
+             animate={{ opacity: index === current ? 1 : 0 }}
+             transition={{ duration: 0.7 }}
+             className="absolute inset-0 w-full h-full perspective-1000"
+             onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                x.set((e.clientX - centerX) / 10);
+                y.set((e.clientY - centerY) / 10);
+             }}
+             onMouseLeave={() => {
+                x.set(0);
+                y.set(0);
+             }}
+          >
+            <motion.div 
+              style={{ rotateX, rotateY, z: 100 }}
+              className="relative w-full h-full preserve-3d transition-transform duration-200 ease-out"
             >
-              <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-white uppercase border border-white/30 backdrop-blur-md rounded-full">
-                {vehicle.category}
-              </span>
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-2 leading-tight">
-                {vehicle.title}
-              </h2>
+              {/* Image */}
+              <div className="relative w-full h-full">
+                <Image
+                  src={vehicle.image}
+                  alt={vehicle.title}
+                  fill
+                  className="object-cover object-center sm:object-center"
+                  priority={index === 0}
+                />
+                {/* Gradient Overlay */}
+                <div className={cn("absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-80", vehicle.accent)} />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90" />
+              </div>
             </motion.div>
-          </div>
-        </motion.div>
-      ))}
+            
+            {/* Content */}
+            <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 z-10 flex flex-col items-start justify-end h-full pointer-events-none">
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: index === current ? 0 : 20, opacity: index === current ? 1 : 0 }}
+                transition={{ delay: 0.3 }}
+                style={{ z: 200 }}
+              >
+                <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-white uppercase border border-white/30 backdrop-blur-md rounded-full">
+                  {vehicle.category}
+                </span>
+                <h2 className="text-4xl md:text-6xl font-bold text-white mb-2 leading-tight">
+                  {vehicle.title}
+                </h2>
+              </motion.div>
+            </div>
+          </motion.div>
+        );
+      })}
 
       {/* Controls */}
       <div className="absolute bottom-8 right-8 flex gap-2 z-20">
