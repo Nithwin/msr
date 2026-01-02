@@ -7,6 +7,7 @@ const manrope = Manrope({
 });
 
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata = {
   title: "MSR Consulting | Precision Advice",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

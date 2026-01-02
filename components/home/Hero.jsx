@@ -57,16 +57,20 @@ export default function Hero() {
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4">
             <Link 
               href="#contact"
-              className="inline-flex items-center justify-center bg-[var(--color-navy)] text-white px-8 py-5 text-lg font-bold min-w-[200px] hover:bg-[var(--color-amber)] transition-colors rounded-sm"
+              className="group relative inline-flex items-center justify-center bg-[var(--color-navy)] text-white px-8 py-5 text-lg font-bold min-w-[200px] overflow-hidden rounded-sm transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.5)]"
             >
-              Start Driving
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shine_1s_ease-in-out_infinite]" />
+              <span className="relative z-10">Start Driving</span>
             </Link>
             <Link 
               href="#machinery"
-              className="inline-flex items-center justify-center border-2 border-[var(--color-navy)] text-[var(--color-navy)] px-8 py-5 text-lg font-bold min-w-[200px] hover:bg-[var(--color-navy)] hover:text-white transition-colors group rounded-sm"
+              className="group relative inline-flex items-center justify-center border-2 border-[var(--color-navy)] text-[var(--color-navy)] px-8 py-5 text-lg font-bold min-w-[200px] overflow-hidden rounded-sm transition-colors"
             >
-              View Services
-              <MoveRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <span className="absolute inset-0 w-full h-full bg-[var(--color-navy)] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+              <span className="relative z-10 flex items-center group-hover:text-white transition-colors duration-300">
+                View Services
+                <MoveRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+              </span>
             </Link>
           </motion.div>
         </motion.div>

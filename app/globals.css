@@ -31,3 +31,8 @@ body {
 .border-structure {
   border: 1px solid var(--border-color);
 }
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); left:0; }
+}

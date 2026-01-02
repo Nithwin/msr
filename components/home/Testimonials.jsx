@@ -30,10 +30,10 @@ export default function Testimonials() {
     <section className="py-24 px-6 bg-[var(--color-navy)] mb-10 overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
       
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Client Stories</h2>
-          <p className="text-white/60 text-lg">Trusted by India's most discerning enthusiasts.</p>
+      <div className="max-w-7xl mx-auto relative z-10 px-4 md:px-0">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Client Stories</h2>
+          <p className="text-white/60 text-base md:text-lg">Trusted by India's most discerning enthusiasts.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

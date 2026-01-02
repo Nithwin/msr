@@ -26,7 +26,48 @@ export default function ComparisonMatrix() {
         </div>
 
         <div className="overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl">
-          <table className="w-full">
+          {/* Mobile View (Cards) */}
+          <div className="md:hidden space-y-4 p-4">
+            {comparisonData.map((row, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/5 rounded-xl p-5 border border-white/10"
+              >
+                <h3 className="text-white font-bold text-lg mb-4 text-center">{row.feature}</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-3 rounded-lg bg-gray-900/50 border border-white/5">
+                    <span className="text-gray-500 text-xs uppercase tracking-wider block mb-2">Other Dealers</span>
+                    {row.retail ? (
+                      <Check className="w-6 h-6 text-gray-600 mx-auto" />
+                    ) : (
+                      <X className="w-6 h-6 text-gray-700 mx-auto opacity-50" />
+                    )}
+                  </div>
+                  <div className="text-center p-3 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 relative overflow-hidden">
+                     {/* Highlight effect for MSR */}
+                     <div className="absolute top-0 right-0 w-8 h-8 bg-[var(--color-primary)] opacity-20 blur-xl rounded-full pointer-events-none"></div>
+                    <span className="text-[var(--color-primary)] text-xs uppercase tracking-wider block mb-2 font-bold">MSR</span>
+                    {row.msr ? (
+                      <div className="flex justify-center">
+                         <div className="bg-green-500/20 p-1 rounded-full">
+                           <Check className="w-5 h-5 text-green-400" />
+                         </div>
+                      </div>
+                    ) : (
+                      <X className="w-6 h-6 text-red-500 mx-auto" />
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Desktop View (Table) */}
+          <table className="w-full hidden md:table">
             <thead>
               <tr className="border-b border-white/10">
                 <th className="py-6 px-6 text-left text-gray-400 font-medium w-1/2">Service Feature</th>
