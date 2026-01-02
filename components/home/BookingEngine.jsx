@@ -1,48 +1,88 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 export default function BookingEngine() {
   return (
-    <section id="contact" className="py-32 px-6 max-w-5xl mx-auto text-center">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-          Start Your Journey.
-        </h2>
+    <section id="contact" className="py-24 px-6 bg-[var(--color-surface)] text-white border-t border-white/10 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-blue-600/5 blur-[150px] rounded-full pointer-events-none"></div>
+
+      <div className="max-w-3xl mx-auto text-center relative z-10">
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Secure Your Purchase.</h2>
+          <p className="text-gray-400 mb-12 text-lg">Schedule a priority consultation for inspection or import.</p>
+        </motion.div>
         
-        <form className="max-w-2xl mx-auto space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-             <input 
-               type="text" 
-               placeholder="Vehicle Type (e.g. 911 GT3)" 
-               className="w-full p-4 bg-gray-50 border border-gray-200 outline-none focus:border-black focus:ring-0 transition-colors placeholder:text-gray-400"
-             />
-             <input 
-               type="text" 
-               placeholder="Budget Range" 
-               className="w-full p-4 bg-gray-50 border border-gray-200 outline-none focus:border-black focus:ring-0 transition-colors placeholder:text-gray-400"
-             />
-          </div>
-          <input 
-             type="date" 
-             className="w-full p-4 bg-gray-50 border border-gray-200 outline-none focus:border-black focus:ring-0 transition-colors text-gray-600"
-          />
-          
-          <button 
-            type="submit" 
-            className="w-full bg-black text-white p-4 font-medium text-lg flex items-center justify-center gap-2 hover:bg-gray-900 transition-colors group"
-          >
-            Request Consultation
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+        <form className="space-y-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <div className="relative group">
+                <input 
+                  type="text" 
+                  placeholder=" " 
+                  className="peer w-full bg-transparent border-b border-white/20 focus:border-[var(--color-primary)] py-4 outline-none transition-all text-white placeholder-transparent"
+                />
+                <label className="absolute left-0 top-4 text-gray-500 text-lg transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[var(--color-primary)]">
+                  Vehicle of Interest
+                </label>
+             </div>
+             
+             <div className="relative group text-left">
+               <select className="w-full bg-transparent border-b border-white/20 focus:border-[var(--color-primary)] py-4 outline-none transition-all text-white appearance-none cursor-pointer">
+                  <option className="bg-black text-gray-400">Buying</option>
+                  <option className="bg-black text-gray-400">Selling</option>
+                  <option className="bg-black text-gray-400">Valuation</option>
+                  <option className="bg-black text-gray-400">Inspection</option>
+               </select>
+               <label className="absolute left-0 -top-6 text-sm text-[var(--color-primary)]">Service Type</label>
+             </div>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative group">
+                <input 
+                  type="text" 
+                  placeholder=" " 
+                  className="peer w-full bg-transparent border-b border-white/20 focus:border-[var(--color-primary)] py-4 outline-none transition-all text-white placeholder-transparent"
+                />
+                 <label className="absolute left-0 top-4 text-gray-500 text-lg transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[var(--color-primary)]">
+                  Full Name
+                </label>
+              </div>
+              
+              <div className="relative group">
+                <input 
+                  type="tel" 
+                  placeholder=" " 
+                  className="peer w-full bg-transparent border-b border-white/20 focus:border-[var(--color-primary)] py-4 outline-none transition-all text-white placeholder-transparent"
+                />
+                 <label className="absolute left-0 top-4 text-gray-500 text-lg transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[var(--color-primary)]">
+                  Phone Number
+                </label>
+              </div>
+           </div>
+           
+           <div className="relative group text-left">
+               <input 
+                 type="date" 
+                 className="w-full bg-transparent border-b border-white/20 focus:border-[var(--color-primary)] py-4 outline-none transition-all text-white appearance-none"
+               />
+               <label className="absolute left-0 -top-6 text-sm text-[var(--color-primary)]">Preferred Date</label>
+           </div>
+           
+           <motion.button 
+             whileHover={{ scale: 1.02 }}
+             whileTap={{ scale: 0.98 }}
+             className="w-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-bold py-5 rounded-lg text-lg shadow-lg hover:shadow-purple-500/30 transition-all uppercase tracking-widest mt-8"
+           >
+             Book Appointment
+           </motion.button>
         </form>
-      </motion.div>
+      </div>
     </section>
   );
 }

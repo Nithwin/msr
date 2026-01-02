@@ -1,28 +1,23 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
 import Navbar from "@/components/layout/Navbar";
 
 export const metadata = {
-  title: "MSR | Luxury Automotive Consulting",
-  description: "Expertise Behind the Wheel. Premium consulting for Porsche, BMW, and more.",
+  title: "MSR Consulting | Precision Advice",
+  description: "Expert consultation for Superbikes & Luxury Cars by Jagades. Track & Street Performance Setup.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black selection:bg-black selection:text-white`}
+        className={`${manrope.variable} antialiased bg-white text-black selection:bg-[var(--color-navy)] selection:text-white`}
       >
         <Navbar />
         {children}
