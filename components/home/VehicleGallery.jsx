@@ -35,6 +35,20 @@ const vehicles = [
     image: "/vehicle-4.png",
     accent: "from-indigo-400 to-slate-800",
   },
+  {
+    id: 5,
+    title: "Client Experience",
+    category: "Deliveries",
+    image: "/client-1.jpeg",
+    accent: "from-purple-600 to-slate-900",
+  },
+  {
+    id: 6,
+    title: "Premium Handover",
+    category: "Moments",
+    image: "/client-2.jpeg",
+    accent: "from-cyan-600 to-slate-900",
+  },
 ];
 
 export default function VehicleGallery() {

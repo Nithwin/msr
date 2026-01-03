@@ -32,7 +32,7 @@ export default function MeetTheExpert() {
                className="absolute inset-0 w-full h-[120%]"
             >
              <Image 
-               src="/expert.png" 
+               src="/expert-ai.png" 
                alt="Mr. Jagades" 
                fill
                className="object-cover"

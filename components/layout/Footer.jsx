@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Instagram, Twitter, Linkedin, MapPin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -12,8 +13,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="text-2xl font-bold tracking-tighter mb-6 block">
-              MSR <span className="text-[var(--color-primary)]">CONSULTING</span>
+            <Link href="/" className="mb-6 block">
+              <Image src="/logo-transparent.png" alt="MSR Consulting" width={180} height={60} className="w-auto h-12 object-contain" />
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Precision advice and premium storage for the most discerning automotive enthusiasts in India.
@@ -59,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-4 text-gray-400">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[var(--color-primary)] shrink-0 mt-1" />
-                <span>Erode, Tamil Nadu<br />India</span>
+                <span>Kolathur, Mettur, Salem<br />India</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[var(--color-primary)] shrink-0" />

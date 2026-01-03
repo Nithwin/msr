@@ -71,7 +71,7 @@ export default function VelocityScroll() {
     <section className="py-12 bg-black text-[#e8e8e8] overflow-hidden border-y border-white/5 relative z-20">
       <ParallaxText baseVelocity={-5}>
         <span className="text-4xl md:text-7xl font-bold uppercase tracking-tighter opacity-80">
-          Premium Pre-Owned • Best in Erode • Quality Assured • Best Prices • 
+          Premium Pre-Owned • Best in Kolathur, Mettur, Salem • Quality Assured • Best Prices • 
         </span>
       </ParallaxText>
       <div className="h-4 md:h-8"></div>
