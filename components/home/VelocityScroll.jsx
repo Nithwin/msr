@@ -71,13 +71,13 @@ export default function VelocityScroll() {
     <section className="py-12 bg-black text-[#e8e8e8] overflow-hidden border-y border-white/5 relative z-20">
       <ParallaxText baseVelocity={-5}>
         <span className="text-4xl md:text-7xl font-bold uppercase tracking-tighter opacity-80">
-          Premium Pre-Owned • Best in Kolathur, Mettur, Salem • Quality Assured • Best Prices • 
+          Best Pre-Owned Bikes & Cars • Kolathur, Mettur, Salem • Valid Papers • 
         </span>
       </ParallaxText>
       <div className="h-4 md:h-8"></div>
       <ParallaxText baseVelocity={5}>
         <span className="text-4xl md:text-7xl font-bold uppercase tracking-tighter text-[var(--color-primary)] opacity-80">
-          MSR Consulting • Dream Bikes • Easy Finance • Quick Delivery •
+          MSR Consulting • Buy & Sell • Best Market Price • Trusted Service •
         </span>
       </ParallaxText>
     </section>

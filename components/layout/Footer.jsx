@@ -17,7 +17,7 @@ export default function Footer() {
               <Image src="/logo-transparent.png" alt="MSR Consulting" width={180} height={60} className="w-auto h-12 object-contain" />
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Precision advice and premium storage for the most discerning automotive enthusiasts in India.
+              Your trusted partner for buying and selling quality used bikes and cars in Erode, Salem, and Mettur.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[var(--color-primary)] hover:text-black transition-colors">

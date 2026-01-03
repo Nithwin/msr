@@ -55,24 +55,24 @@ export default function MeetTheExpert() {
         >
           <span className="text-[var(--color-primary)] font-bold tracking-widest uppercase mb-4 block">The Expert</span>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-            Decades of <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Automotive Mastery.</span>
+            Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Riders in Tamil Nadu.</span>
           </h2>
           
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            With over 15 years in the high-performance automotive sector, Jagades has established himself as the definitive authority on superbike diagnostics, luxury imports, and valuation. 
+            With over 15 years in the automotive sector, Jagades is known for sourcing the best quality pre-owned bikes and cars in the local market.
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-8">
-            His approach combines technical engineering precision with deep market insight, ensuring every client makes an investment, not just a purchase.
+            He ensures every vehicle is inspected for quality and offered at the best price in Erode, Salem, and surroundings.
           </p>
           
           <div className="grid grid-cols-2 gap-8 mb-10">
              <div>
                 <span className="block text-4xl font-bold text-white mb-1">500+</span>
-                <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">Superbikes Inspected</span>
+                <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">Vehicles Delivered</span>
              </div>
              <div>
-                <span className="block text-4xl font-bold text-white mb-1">₹120Cr+</span>
-                <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">Asset Value Managed</span>
+                <span className="block text-4xl font-bold text-white mb-1">₹20L+</span>
+                <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">Turnover</span>
              </div>
           </div>
         </motion.div>

@@ -6,27 +6,27 @@ import { cn } from "@/lib/utils";
 
 const services = [
   {
-    title: "Superbikes",
-    subtitle: "Track & Street Performance Setup",
+    title: "Bikes",
+    subtitle: "Quality Pre-owned Bikes",
     icon: Bike,
     className: "col-span-1 md:col-span-1",
   },
   {
-    title: "Cruisers",
-    subtitle: "Long-Distance Ergonomics & Sourcing",
-    icon: Gauge,
-    className: "col-span-1",
-  },
-  {
-    title: "Luxury Cars",
-    subtitle: "Pre-owned Market Valuation & Inspection",
+    title: "Cars",
+    subtitle: "Best Value Used Cars",
     icon: Car,
     className: "col-span-1",
   },
   {
-    title: "Performance",
-    subtitle: "Modifications & Tuning Consulting",
+    title: "Service",
+    subtitle: "Maintenance & Repairs",
     icon: Wrench,
+    className: "col-span-1",
+  },
+  {
+    title: "Consulting",
+    subtitle: "Valuation & Buy/Sell Advice",
+    icon: Gauge,
     className: "col-span-1",
   },
 ];
